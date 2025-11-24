@@ -29,7 +29,7 @@ def process_event_data(random_number: int) -> dict:
 
 
 @flow(name="flow-b", log_prints=True)
-def flow_b(random_number: str = "42"):  # random_number is passed automatically by Prefect automation       # type: ignore  # noqa: E501        
+def flow_b(random_number: any = None):  # random_number is passed automatically by Prefect automation       # type: ignore  # noqa: E501        
     """
     Flow B: Triggered automatically by Flow A's event.
     
