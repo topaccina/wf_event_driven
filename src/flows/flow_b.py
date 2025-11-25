@@ -10,7 +10,7 @@ from prefect import flow, task
 
 
 @task
-def process_event_data(random_number: int) -> dict:
+def process_event_data(random_number) -> dict:
     """
     Process the event data received from Flow A.
     
@@ -29,7 +29,7 @@ def process_event_data(random_number: int) -> dict:
 
 
 @flow(name="flow-b", log_prints=True)
-def flow_b(random_number: int = 10):  # random_number is passed automatically by Prefect automation       # type: ignore  # noqa: E501        
+def flow_b(random_number=10):  # random_number is passed automatically by Prefect automation       # type: ignore  # noqa: E501        
     """
     Flow B: Triggered automatically by Flow A's event.
     
